@@ -6,7 +6,7 @@ Greetings, adventurer! Embark upon this tech task as a noble quest.
 
 We would like you to create a simple front-end for a checkout using the Figma designs provided. In this project there are APIs that will enable you to complete the task.
 
-You may use whatever tools/libraries you need to help you to complete this quest!
+You may use any tools/libraries you need to help you to complete this quest!
 
 ### What are we looking for?
 
