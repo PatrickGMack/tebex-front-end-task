@@ -49,7 +49,7 @@ Be sure to pass the `Content-Type` header of `application/json` when performing 
 
 #### Get basket endpoint
 
-```
+```text
 GET  /api/basket
 ```
 
@@ -81,8 +81,12 @@ This will return
 
 #### Apply coupon endpoint
 
-```
+```text
 POST  /api/basket/:id/coupon
+Body: 
+{
+    "code": "25OFF"
+}
 ```
 
 This will return the basket along with the applied discount, use code 25OFF for 25% off the total price.
@@ -113,7 +117,7 @@ This will return the basket along with the applied discount, use code 25OFF for 
 
 #### Complete checkout endpoint
 
-```
+```text
 POST  /api/basket/:id/checkout
 Body:
 {
