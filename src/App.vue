@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        <img src="img/logo.svg" class="logo" alt="Tebex logo" />
+        <img src="/img/logo.svg" class="logo" alt="Tebex logo" />
     </div>
 </template>
 
