@@ -69,7 +69,7 @@ fastify.post(
             return { success: false, message: "Coupon code not found" };
         } else {
             const subTotal = basket.subTotal * 0.75;
-            const salesTax = 20 / 100 * subTotal;
+            const salesTax = subTotal * 0.2;
             const total = subTotal + salesTax;
 
             return {

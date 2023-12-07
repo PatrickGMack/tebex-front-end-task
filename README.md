@@ -72,10 +72,10 @@ This will return
       "quantity": 1
     }
   ],
-  "couponCode": "25OFF",
-  "subTotal": 11.24,
-  "salesTax": 2.25,
-  "total": 13.48
+  "couponCode": null,
+  "subTotal": 14.98,
+  "salesTax": 3.00,
+  "total": 17.98,
 }
 ```
 
