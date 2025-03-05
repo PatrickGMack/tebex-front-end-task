@@ -1,18 +1,12 @@
-<script setup>
+<script lang="ts" setup>
+import { ref } from "vue";
+import Welcome from "./components/Welcome.vue";
 
+const name = ref("Tebex");
 </script>
 
 <template>
     <div>
-        <img src="/img/logo.svg" class="logo" alt="Tebex logo" />
+        <Welcome :name="name" />
     </div>
 </template>
-
-<style scoped>
-.logo {
-    height: 4em;
-    padding: 1.5em;
-    display: block;
-    margin: 0 auto;
-}
-</style>
