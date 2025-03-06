@@ -13,10 +13,7 @@ You may use any tools/libraries you need to help you to complete this quest!
 - Does the end product look exactly like the designs?
 - Does the product work as expected?
 - Is the code clean, consistent and extensible?
-
-**Bonus** if you feel like you have time you might consider the following as bonus
-
-- Add unit tests or e2e tests
+- Add unit tests or e2e tests, you don't need to get 100% coverage but just a few tests should suffice
 - Consider responsive design, how does it look on mobile?
 
 Ready to get started?
