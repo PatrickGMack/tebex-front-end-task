@@ -1,4 +1,4 @@
-# Tebex Front End Quest
+# Tebex Front-end Quest
 
 Greetings, adventurer! Embark upon this tech task as a noble quest.
 
@@ -11,12 +11,9 @@ You may use any tools/libraries you need to help you to complete this quest!
 ### What are we looking for?
 
 - Does the end product look exactly like the designs?
-- Does the product work as expected?
+- Does the form have some validation?
 - Is the code clean, consistent and extensible?
-
-**Bonus** if you feel like you have time you might consider the following as bonus
-
-- Add unit tests or e2e tests
+- Add unit tests or e2e tests, you don't need to get 100% coverage a few tests should suffice
 - Consider responsive design, how does it look on mobile?
 
 Ready to get started?
@@ -29,13 +26,13 @@ npm install
 
 Launch the APIs this will run on port 3000
 
-```
+```shell
 npm run api
 ```
 
 This project uses vite to run the dev server execute
 
-```
+```shell
 npm run dev
 ```
 
@@ -135,3 +132,6 @@ This will return
 ```json
 { "success": true, "transactionId": "tbx-6a6da59ebfa86d3d106fb68be75c0fd7" }
 ```
+
+#### Assets
+All the assets you require wil be in the `public/` directory.
