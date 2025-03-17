@@ -14,6 +14,7 @@ You may use any tools/libraries you need to help you to complete this quest!
 - Does the form have some validation?
 - Is the code clean, consistent and extensible?
 - Add unit tests or e2e tests, you don't need to get 100% coverage a few tests should suffice
+- Consider responsive design, how does it look on mobile?
 
 Ready to get started?
 
