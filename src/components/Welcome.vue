@@ -6,8 +6,8 @@ defineProps<{
 
 <template>
     <div class="welcome">
-        <img src="/img/logo.svg" class="logo" alt="Tebex logo" />
-        <h1>Welcome to the {{ name }} front-end task</h1>
+        <img src="/img/logo.svg" class="logo" alt="logo" />
+        <h1>Welcome to the {{ name }} Front-end Quest</h1>
 
         <p>All assets can be found in the /public directory</p>
 
