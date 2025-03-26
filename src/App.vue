@@ -1,12 +1,9 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import Welcome from "./components/Welcome.vue";
-
-const name = ref("Tebex");
+import CheckoutJourney from './components/CheckoutJourney.vue';
 </script>
 
 <template>
     <div>
-        <Welcome :name="name" />
+        <CheckoutJourney />
     </div>
 </template>

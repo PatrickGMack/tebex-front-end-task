@@ -115,9 +115,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
-import { useForm, Form, Field, ErrorMessage } from "vee-validate";
+import { ref, onMounted, defineEmits } from "vue";
+import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
+
+const emit = defineEmits<{
+  (event: 'orderSuccess', payload: { transactionId: string; }): void;
+}>();
 
 interface Basket {
     id: string;
@@ -160,10 +164,6 @@ const schema = yup.object({
     cardCvc: yup.string().required("CVC/CVV is required").matches(/^\d{3,4}$/, "Invalid CVC"),
     postalCode: yup.string().required("Zip/Postal code is required"),
     nameOnCard: yup.string().required("Name on card is required"),
-});
-
-const { handleSubmit } = useForm({
-    validationSchema: schema,
 });
 
 // Get basket contents
@@ -223,8 +223,11 @@ const submitPayment = async () => {
     }
 
     const data = await response.json();
+
+    console.log(data);
+    // emit order success event here
+    emit('orderSuccess', { transactionId: data.transactionId});
     paymentErrorMessage.value = null;
-    basket.value = data;
 };
 
 onMounted(() => {
