@@ -69,39 +69,39 @@
                 <!-- Using VeeValidate for form valdidation -->
                 <Form class="mt-6" :validation-schema="schema" @submit="submitPayment">
                     <div class="mb-5">
-                        <label class="text-xs font-bold">Email*</label>
+                        <label class="text-xs text-white font-bold">Email*</label>
                         <Field name="email" v-model="paymentDetails.email" class="w-full p-2 bg-[#262626] border border-[#333333] rounded-[3px]" placeholder="Enter your email address"/>
                         <ErrorMessage name="email" class="text-red-500 text-xs"/>
                     </div>
 
                     <div class="mb-5">
-                        <label class="text-xs font-bold">Card number*</label>
+                        <label class="text-xs text-white font-bold">Card number*</label>
                         <Field name="cardNumber" v-model="paymentDetails.cardNumber" class="w-full p-2 bg-[#262626] border border-[#333333] rounded-[3px]" placeholder="1234 5678 9101 1121"/>
                         <ErrorMessage name="cardNumber" class="text-red-500 text-xs"/>
                     </div>
 
                     <div class="flex flex-wrap sm:flex-nowrap mb-5 gap-3">
                         <div class="w-full sm:flex-1">
-                            <label class="text-xs font-bold">Expiry date*</label>
+                            <label class="text-xs text-white font-bold">Expiry date*</label>
                             <Field name="cardExpiry" v-model="paymentDetails.cardExpiry" class="w-full p-2 bg-[#262626] border border-[#333333] rounded-[3px]" placeholder="MM/YY"/>
                             <ErrorMessage name="cardExpiry" class="text-red-500 text-xs"/>
                         </div>
 
                         <div class="w-full sm:flex-1">
-                            <label class="text-xs font-bold">CVC/CVV*</label>
+                            <label class="text-xs text-white font-bold">CVC/CVV*</label>
                             <Field name="cardCvc" v-model="paymentDetails.cardCvc" class="w-full p-2 bg-[#262626] border border-[#333333] rounded-[3px]" placeholder="123"/>
                             <ErrorMessage name="cardCvc" class="text-red-500 text-xs"/>
                         </div>
 
                         <div class="w-full sm:flex-[1.5]">
-                            <label class="text-xs font-bold">Zip Code / Postal Code*</label>
+                            <label class="text-xs text-white font-bold">Zip Code / Postal Code*</label>
                             <Field name="postalCode" v-model="paymentDetails.postalCode" class="w-full p-2 bg-[#262626] border border-[#333333] rounded-[3px]" placeholder="PO12 1AB"/>
                             <ErrorMessage name="postalCode" class="text-red-500 text-xs"/>
                         </div>
                     </div>
 
                     <div class="mb-6">
-                        <label class="text-xs font-bold">Name on card*</label>
+                        <label class="text-xs text-white font-bold">Name on card*</label>
                         <Field name="nameOnCard" v-model="paymentDetails.nameOnCard" class="w-full p-2 bg-[#262626] border border-[#333333] rounded-[3px]" placeholder="Enter your name as shown"/>
                         <ErrorMessage name="nameOnCard" class="text-red-500 text-xs"/>
                     </div>
@@ -176,6 +176,7 @@ const getBasket = async () => {
 
 // Apply coupon
 const applyCoupon = async () => {
+    if (!couponCode.value) return;
     if (!basket.value) return;
 
     const response = await fetch(`/api/basket/${basket.value.id}/coupon`, {
