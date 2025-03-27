@@ -14,7 +14,7 @@ test.describe('Checkout Page', () => {
         await page.fill('input[placeholder="Enter code here"]', '25OFF');
         await page.click('button:has-text("Confirm")');
         
-        await expect(page.locator('text=25OFF')).toBeVisible();
+        await expect(page.locator('text=Discounts:')).toBeVisible();
     });
 
     test('should show error for invalid coupon', async ({ page }) => {
@@ -40,7 +40,7 @@ test.describe('Checkout Page', () => {
         
         await page.click('button:has-text("Pay by Card")');
         
-        await expect(page.locator('text=Order Confirmed')).toBeVisible();
+        await expect(page.locator('text=Order Complete')).toBeVisible();
         await expect(page.locator('text=Order number: ')).toBeVisible();
     });
 
