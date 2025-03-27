@@ -23,5 +23,9 @@ npm run dev
 To run the tests run
 
 ```shell
-npx run test
+npx playwright install
+```
+
+```shell
+npx playwright test
 ```
