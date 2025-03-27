@@ -35,22 +35,25 @@
                 <div v-if="basket" class="flex flex-col mt-6">
                     <div class="flex justify-between">
                         <label class="text-white text-xs mb-2">Subtotal:</label>
-                        <p class="text-white text-xs">{{ currency.symbol + basket.subTotal }}</p>
+                        <p class="text-white text-xs">{{ formatPrice(basket.subTotal) }}</p>
                     </div>
                     <div class="flex justify-between">
                         <label class="text-white text-xs mb-2">Sales Tax:</label>
-                        <p class="text-white text-xs">{{ currency.symbol + (basket.salesTax ? basket.salesTax.toFixed(2) : '0.00') }}</p>
+                        <p class="text-white text-xs">{{ formatPrice(basket.salesTax)}}</p>
 
                     </div>
                     <div v-if="basket.couponCode" class="mb-4">
                         <label class="text-white text-xs mb-1 block">Discounts:</label>
-                        <div class="bg-[#4D4D4D] px-3 py-1 rounded-full inline-block">
-                            <p class="text-white text-xs">{{ basket.couponCode }}</p>
+                        <div class="flex justify-between">
+                            <div class="bg-[#4D4D4D] px-3 py-1 rounded-full inline-block">
+                                <p class="text-white text-xs">{{ basket.couponCode }}</p>
+                            </div>
+                            <p class="text-white text-xs mt-1">{{ formatPrice(discountValue) }}</p>
                         </div>
                     </div>
                     <div class="flex justify-between">
                         <label class="text-white text-[22px] font-extrabold">Total price:</label>
-                        <p class="text-white text-[22px] font-extrabold">{{ currency.symbol + basket.total }}</p>
+                        <p class="text-white text-[22px] font-extrabold">{{ formatPrice(basket.total) }}</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +77,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import PaymentForm from "./PaymentForm.vue";
 
 const emit = defineEmits<{
@@ -99,6 +102,8 @@ const currency = {
     symbol: "$",
     code: "USD",
 };
+
+const formatPrice = (value: number) => `${currency.symbol}${value.toFixed(2)}`;
 
 // Get basket contents
 const getBasket = async () => {
@@ -135,6 +140,12 @@ const applyCoupon = async () => {
     couponErrorMessage.value = null;
 };
 
+// Calculate discount value
+const discountValue = computed(() => {
+    if (!basket.value) return 0;
+    const productTotal = basket.value.products.reduce((sum, product) => sum + product.price * product.quantity, 0);
+    return basket.value.subTotal - productTotal;
+});
 
 // Submit payment
 const submitPayment = async ({ paymentDetails }: { paymentDetails: object }) => {
