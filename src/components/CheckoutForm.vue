@@ -204,7 +204,6 @@ const applyCoupon = async () => {
 
 // Submit payment
 const submitPayment = async () => {
-    console.log('submitPayment');
     if (!basket.value || !orderID.value) return;
 
     const response = await fetch(`/api/basket/${basket.value.id}/checkout`, {
@@ -225,8 +224,6 @@ const submitPayment = async () => {
 
     const data = await response.json();
 
-    console.log(data);
-    // emit order success event here
     emit('orderSuccess', { transactionId: data.transactionId});
     paymentErrorMessage.value = null;
 };
