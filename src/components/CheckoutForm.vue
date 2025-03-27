@@ -23,7 +23,7 @@
                 <p v-else class="text-white mt-4">Loading basket...</p>
             </div>
 
-            <div class="mb-3 lg:mb-20">
+            <div class="mb-3 lg:mb-50">
                 <h3 class="text-white text-xs font-bold mt-6">Coupon/Gift Card</h3>
                 <div class="flex items-center h-10 mt-2">
                     <input type="text" placeholder="Enter code here" :class="['w-full h-full p-2 bg-[#262626] border-1 border-[#333333] rounded-[3px] mr-3', couponErrorMessage ? 'border-red-500' : '']" v-model="couponCode"/>
