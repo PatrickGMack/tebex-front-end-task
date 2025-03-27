@@ -1,13 +1,13 @@
 <template>
     <div>
-        <CheckoutForm v-if="!orderSuccess" @orderSuccess="handleOrderSuccess" />
+        <Checkout v-if="!orderSuccess" @orderSuccess="handleOrderSuccess" />
         <OrderSuccess v-else :order="orderData" />
     </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import CheckoutForm from './CheckoutForm.vue';
+import Checkout from './Checkout.vue';
 import OrderSuccess from './OrderSuccess.vue';
 
 const orderSuccess = ref(false);
