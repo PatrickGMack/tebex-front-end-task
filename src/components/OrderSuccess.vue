@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-center py-5 md:py-16">
-        <img src="/img/logo.svg" alt="Tebex logo" class="mb-16"/>
+        <img src="/img/logo.svg" alt="Tebex logo" class="mb-16 h-12"/>
         <div class="flex justify-center items-center border-1 border-[#333333] rounded-[2px] py-5 px-2 md:px-10 lg:px-42 mx-5">
             <div class="text-center md:max-w-[450px]">
                 <div class="flex justify-center">

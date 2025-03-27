@@ -3,7 +3,7 @@
         <!-- Basket details -->
         <div class="flex flex-col justify-between w-full lg:w-1/2 bg-[#1A1A1A] px-5 md:px-20 lg:px-28 xl:px-34 py-8">
             <div>
-                <img src="/img/logo.svg" alt="logo" />
+                <img src="/img/logo.svg" alt="logo" class="h-12" />
 
                 <h3 class="text-white text-xs font-bold mt-6">Your order</h3>
 
