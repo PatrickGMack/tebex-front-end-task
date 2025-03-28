@@ -1,5 +1,7 @@
 # Tebex Front-end Quest
 
+Built with Tailwind for styling, VeeValidate for form validation and Playwright for testing. Also, a fun little Vue Confetti Explosion for successful payment!
+
 ### Setup
 
 ```shell
